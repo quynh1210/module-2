@@ -1,24 +1,38 @@
 package com.codegym;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Linear Equation Resolver");
-        System.out.println("Given a equation 'a * x + b = c', please enter constants:");
+        // write your code here
         Scanner scanner = new Scanner(System.in);
-        System.out.print("a: ");
-        double a = scanner.nextDouble();
 
-        System.out.print("b: ");
-        double b = scanner.nextDouble();
+        System.out.print("Which month that you want to count days? ");
+        int month = scanner.nextInt();
 
-        System.out.print("c: ");
-        double c = scanner.nextDouble();
-        if (a !=0){
-            double answer=(c-b)/a;
-            System.out.printf("Equation pass with x = %f!\n", answer);
-        } else {
-            System.out.print("No solution!");
+        switch (month) {
+            case 2:
+                System.out.print("The month '2' has 28 or 29 days!");
+                break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                System.out.print("The month '" + month + "'has 31 days!");
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                System.out.print("The month '" + month + "' has 30 days!");
+                break;
+            default:
+                System.out.print("Invalid input!");
+                break;
         }
     }
 }
